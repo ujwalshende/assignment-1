@@ -1,0 +1,9 @@
+name: workflow-2
+on: issues
+jobs:
+    print_details:
+        runs-on: ubuntu-latest
+        steps:
+            - name: print
+              run: echo "${{github.event}}"
+    

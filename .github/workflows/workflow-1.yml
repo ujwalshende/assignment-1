@@ -1,0 +1,21 @@
+name: lint_test_build
+on: push
+jobs:
+    workflow-jobs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get code
+              uses: actions/checkout@v4
+            - name: Install NodeJS
+              uses: actions/setup-node@v4
+              with:
+                node-version: 18
+            - name: lint
+              run: npm run lint
+            - name: test
+              run: npm run test
+            - name: build
+              run: npm run build
+            - name: finishing up
+              run: echo "All ok. Done" 
+
